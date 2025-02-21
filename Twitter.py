@@ -26,9 +26,9 @@ class Tweet():
 class Perfil():
     def __init__(self, usuario: str):
         self.__usuario = usuario
-        self.__seguidos = [Perfil]
-        self.__seguidores = [Perfil]
-        self.__tweets = [Tweet]
+        self.__seguidos = []
+        self.__seguidores = []
+        self.__tweets = []
         self.__ativo = True
     
     def add_seguidor(self, seguidor):
@@ -94,7 +94,7 @@ class PessoaJuridica(Perfil):
 
 class RepositoriosUsuarios():
     def __init__(self):
-        self.__usuarios = [Perfil]
+        self.__usuarios = []
     
     def cadastrar(self, perfil: Perfil):
         if self.buscar(perfil.get_usuario()) is not None:
@@ -196,7 +196,11 @@ class MyTwitter():
         perfil = self.__repositorios.buscar(usuario)
         if perfil is not None:
             if perfil.is_ativo():
-                return len(perfil.seguidores())
+                seguidores = 0
+                for seguidor in perfil.seguidores():
+                    if seguidor.is_ativo():
+                        seguidores += 1
+                return seguidores
             else:
                 raise PDException(usuario)
         else:
@@ -206,7 +210,11 @@ class MyTwitter():
         perfil = self.__repositorios.buscar(usuario)
         if perfil is not None:
             if perfil.is_ativo():
-                return perfil.seguidores()
+                seguidores = []
+                for seguidor in perfil.seguidores():
+                    if seguidor.is_ativo():
+                        seguidores.append(seguidor)
+                return seguidores
             else:
                 raise PDException(usuario)
         else:
@@ -216,10 +224,14 @@ class MyTwitter():
         perfil = self.__repositorios.buscar(usuario)
         if perfil is not None:
             if perfil.is_ativo():
-                return perfil.seguidos()
+                seguidos = []
+                for seguidor in perfil.seguidos():
+                    if seguidor.is_ativo():
+                        seguidos.append(seguidor)
+                return seguidos
             else:
                 raise PDException(usuario)
         else:
             raise PIException(usuario)
-        
+    
     

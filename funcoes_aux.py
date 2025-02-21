@@ -10,11 +10,13 @@ def gerador():
 def ordenar_pela_data(lista):
     for i in range(len(lista)):
         menor = datetime.datetime.now()
+        indice = 0
         for j in range(i,len(lista)):
-            lista[menor].get_data_postagem() > lista[j].get_data_postagem()
-            menor = j
+            menor > lista[j].get_data_postagem()
+            menor = lista[j].get_data_postagem()
+            indice = j
         aux = lista[i]
-        lista[i] = lista[menor]
-        lista[menor] = aux
+        lista[i] = lista[indice]
+        lista[indice] = aux
     
     return lista
