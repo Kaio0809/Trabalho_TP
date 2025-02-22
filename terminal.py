@@ -54,7 +54,7 @@ def terminal():
             try:
                 usuario = "@" + str(input("Digite o usuário: @"))
                 linha_do_tempo = mytwitter.timeline(usuario)
-                print("Timeline:!\n")
+                print("Timeline:\n")
                 for tweet in linha_do_tempo:
                     print(f"usuário: {tweet.get_usuario()}\nTweet: {tweet.get_mensagem()}\nData: {tweet.get_data_postagem()}\n\n")
             except PDException as ex:
@@ -66,9 +66,9 @@ def terminal():
             try:
                 usuario = "@" + str(input("Digite o usuário: @"))
                 tweets = mytwitter.tweets(usuario)
-                print(f"Tweets {usuario}:\n")
+                print(f"Tweets {usuario}:")
                 for tweet in tweets:
-                    print(f"Tweet: {tweet.get_mensagem()}\nData: {tweet.get_data_postagem()}\n\n")
+                    print(f"Tweet: {tweet.get_mensagem()}\nData: {tweet.get_data_postagem()}\n")
             except PDException as ex:
                 ex.print_mensagem()
             except PIException as ex:
@@ -98,9 +98,9 @@ def terminal():
         
         elif opcao == 7:
             try:
-                usuario = "@" + str(input("Digite seu usuario: "))
+                usuario = "@" + str(input("Digite seu usuario: @"))
                 seguidores = mytwitter.seguidores(usuario)
-                print("Seus Seguidores:\n")
+                print("Seus Seguidores:")
                 for seguidor in seguidores:
                     print(f"{seguidor.get_usuario()}")
             except PDException as ex:
@@ -110,9 +110,9 @@ def terminal():
         
         elif opcao == 8:
             try:
-                usuario = "@" + str(input("Digite seu usuario: "))
+                usuario = "@" + str(input("Digite seu usuario: @"))
                 seguidos = mytwitter.seguidos(usuario)
-                print("Seus Seguidos:\n")
+                print("Seus Seguidos:")
                 for seguidor in seguidos:
                     print(f"{seguidor.get_usuario()}")
             except PDException as ex:

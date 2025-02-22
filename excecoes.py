@@ -6,25 +6,25 @@ class UJCException(Exception):
         super().__init__(*args)
 
     def print_mensagem(self):
-        print(f"{self.__mensagem}:\nUsuário: {self.__usuario}")
+        print(f"{self.__mensagem}\nUsuário: {self.__usuario}")
 
 class UNCException(Exception):
     def __init__(self, usuario, *args):
         self.__usuario = usuario
-        self.__mensagem = "Usuário Não Cadastrado"
+        self.__mensagem = "Usuário Não Cadastrado!"
         super().__init__(*args)
     
     def print_mensagem(self):
-        print(f'{self.__mensagem}:\nUsuário: {self.__usuario}')
+        print(f'{self.__mensagem}\nUsuário: {self.__usuario}')
 
 class PPException(Exception):
     def __init__(self, usuario, *args):
         self.__usuario = usuario
-        self.__mensagem = "Perfil Já Existente"
+        self.__mensagem = "Perfil Já Existente!"
         super().__init__(*args)
     
     def print_mensagem(self):
-        print(f'{self.__mensagem}:\nUsuário: {self.__usuario}')
+        print(f'{self.__mensagem}\nUsuário: {self.__usuario}')
 
 class PDException(Exception):
     def __init__(self, usuario, *args):
@@ -33,7 +33,7 @@ class PDException(Exception):
         super().__init__(*args)
     
     def print_mensagem(self):
-        print(f'{self.__mensagem}:\nUsuário: {self.__usuario}')
+        print(f'{self.__mensagem}\nUsuário: {self.__usuario}')
 
 class PIException(Exception):
     def __init__(self, usuario, *args):
@@ -42,7 +42,7 @@ class PIException(Exception):
         super().__init__(*args)
     
     def print_mensagem(self):
-        print(f'{self.__mensagem}:\nUsuário: {self.__usuario}')
+        print(f'{self.__mensagem}\nUsuário: {self.__usuario}')
 
 class MFPException(Exception):
     def __init__(self, tamanho, *args):
@@ -51,7 +51,7 @@ class MFPException(Exception):
         super().__init__(*args)
     
     def print_mensagem(self):
-        print(f'{self.__mensagem}:\nMensagem de tamanho: {self.__tamanho}')
+        print(f'{self.__mensagem}\nMensagem de tamanho: {self.__tamanho}')
 
 class SIException(Exception):
     def __init__(self, usuario, *args):
@@ -60,5 +60,5 @@ class SIException(Exception):
         super().__init__(*args)
     
     def print_mensagem(self):
-        print(f'{self.__mensagem}:\nSeguidor: {self.__usuario}')
+        print(f'{self.__mensagem}\nSeguidor: {self.__usuario}')
 

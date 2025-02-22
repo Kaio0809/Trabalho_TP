@@ -12,9 +12,9 @@ def ordenar_pela_data(lista):
         menor = datetime.datetime.now()
         indice = 0
         for j in range(i,len(lista)):
-            menor > lista[j].get_data_postagem()
-            menor = lista[j].get_data_postagem()
-            indice = j
+            if menor > lista[j].get_data_postagem():
+                menor = lista[j].get_data_postagem()
+                indice = j
         aux = lista[i]
         lista[i] = lista[indice]
         lista[indice] = aux

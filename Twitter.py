@@ -9,7 +9,7 @@ class Tweet():
         self.__id = next(gerador_id)
         self.__usuario = usuario
         self.__mensagem = mensagem
-        self.__data_postagem = datetime.datetime.today()
+        self.__data_postagem = datetime.datetime.now()
     
     def get_id(self) -> int:
         return self.__id
