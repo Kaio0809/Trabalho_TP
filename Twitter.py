@@ -2,11 +2,11 @@ import datetime
 from funcoes_aux import gerador, ordenar_pela_data
 from excecoes import UJCException, UNCException, PPException, PDException, PIException, MFPException, SIException
 
-gerador_id = gerador()
+gerador()
 
 class Tweet():
     def __init__(self, usuario: str, mensagem: str) -> None:
-        self.__id = next(gerador_id)
+        self.__id = next(gerador())
         self.__usuario = usuario
         self.__mensagem = mensagem
         self.__data_postagem = datetime.datetime.now()
