@@ -76,7 +76,7 @@ def terminal():
         
         elif opcao == 5:
             try:
-                usuario = "@" + str(input("Digite o usuário: @"))
+                usuario = "@" + str(input("Digite o seguidor: @"))
                 seguir = "@" + str(input("Perfil seguido: @"))
                 mytwitter.seguir(usuario, seguir)
                 print("Seguido!\n")
@@ -127,4 +127,5 @@ def terminal():
             print("Digito Inválido!")
             continue
 
-terminal()
+if __name__ == "__main__":
+    terminal()
